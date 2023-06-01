@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<select multiple id="select" style="width:100px;" onChange="handleChange();">
+			<option value="1">kkk</option>
+			<option value="2">ddd</option>
+			<option value="3">sssw</option>
+		</select>
+		
+	</body>
+	<script>
+		function handleChange() {
+			const sel = document.getElementById("select");
+			const index = sel.selectedIndex;
+			console.log('index----', index);
+			const text = sel.options[index].text; // 选中文本
+			const value = sel.options[index].value; // 选中文本
+			console.log("text---%s, value---%s", text, value);
+		}
+		
+		
+		const selectElement = document.querySelector('#select');
+		selectElement.addEventListener('change', (event) => {
+		  console.log(event.target.value);
+		});
+	</script>
+</html>
