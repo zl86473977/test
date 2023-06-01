@@ -3,25 +3,15 @@
 	<head>
 		<meta charset="utf-8">
 		<title></title>
-		<script src="http://static.chizao.com/js/vue.min.js"></script>
 	</head>
 	<body>
-		<div id="app">
-			{{ message }}
-			<!-- <button @click="message+=1">click</button> -->
-			
-		</div>
-
 		<script>
-			var app = new Vue({
-				el: '#app',
-				data: {
-					message: 'Hello Vue!'
-				}
-			})
+			// setTimeout(() => {				
+				Notification.requestPermission( function(status) {
+				  console.log(status); // 仅当值为 "granted" 时显示通知
+				  var n = new Notification("title", {body: "notification body"}); // 显示通知
+				});
+			// }, 2000)
 		</script>
-		<style>
-			
-		</style>
 	</body>
 </html>

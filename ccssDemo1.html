@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="login-form">
+			<h2>账密登录</h2>
+			<div class="form-item form-tel">
+				<input maxlength="64" placeholder="邮箱/手机号（国际号码加区号）">
+				<img src="https://sf3-scmcdn2-tos.pstatp.com/xitu_juejin_web/img/greeting.1415c1c.png" class="greeting">
+				<img src="https://sf3-scmcdn2-tos.pstatp.com/xitu_juejin_web/img/normal.0447fe9.png" class="normal">
+			</div>
+			<div class="form-item form-password">
+				<input class="form-password" type="password" maxlength="64" placeholder="请输入密码">
+				<img src="https://sf3-scmcdn2-tos.pstatp.com/xitu_juejin_web/img/blindfold.58ce423.png"
+					class="blindfold">
+				<img src="https://sf3-scmcdn2-tos.pstatp.com/xitu_juejin_web/img/normal.0447fe9.png" class="normal">
+			</div>
+			<button class="btn-submit">登录</button>
+		</div>
+	</body>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			background-color: #e9e9e9;
+		}
+
+		.login-form {
+			width: 370px;
+			margin: 100px auto;
+			padding: 24px;
+			background-color: #fff;
+			position: relative;
+		}
+
+		h2 {
+			color: #333;
+			font-size: 18px;
+			margin-bottom: 24px;
+		}
+
+		input {
+			outline: none;
+			padding: 10px;
+			margin-bottom: 10px;
+			width: 100%;
+			border: 1px solid #e9e9e9;
+			border-radius: 2px;
+			outline: none;
+			box-sizing: border-box;
+			font-size: 16px;
+		}
+
+		input:focus {
+			border-color: #007fff;
+		}
+
+		img {
+			width: 120;
+			height: 95px;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		img.greeting,
+		img.blindfold {
+			display: none;
+		}
+
+		.form-tel img.greeting {
+			height: 113px;
+		}
+
+		.form-tel input:focus~img.greeting {
+			display: block;
+		}
+
+		.form-tel input:focus~img.normal {
+			display: none;
+		}
+
+		.form-password img.blindfold {
+			width: 103px;
+			height: 84px;
+		}
+
+		.form-password input:focus~img.blindfold {
+			display: block;
+		}
+
+		.form-password input:focus~img.normal {
+			display: none;
+		}
+
+
+		.btn-submit {
+			width: 100%;
+			height: 40px;
+			color: #fff;
+			background-color: #007fff;
+			border-radius: 2px;
+			outline: none;
+			box-sizing: border-box;
+			cursor: pointer;
+			margin-top: 10px;
+			border: none;
+			padding: 8px 20px;
+		}
+	</style>
+</html>

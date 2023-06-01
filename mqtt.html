@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+		<script>
+			// 将在全局初始化一个 mqtt 变量
+			console.log(mqtt)
+			const clientId = 'zl_test_html';
+			const host = 'ws://172.29.80.162:8083/mqtt';
+			const options = {
+				keepalive: 60,
+				clientId: clientId,
+				protocolId: 'MQTT',
+				protocolVersion: 4,
+				clean: true,
+				reconnectPeriod: 1000,
+				connectTimeout: 30 * 1000,
+				will: {
+					topic: 'WillMsg',
+					payload: 'Connection Closed abnormally..!',
+					qos: 0,
+					retain: false
+				},
+			}
+
+			console.log('Connecting mqtt client')
+			const client = mqtt.connect(host, options)
+			
+			client.on('connect', () => {
+			  console.log('Client connected:' + clientId)
+			  // Subscribe
+			  client.subscribe('raw', { qos: 0 })
+			})
+			client.on('error', (err) => {
+				console.log('Connection error: ', err)
+				client.end()
+			})
+
+			// client.on('message', (topic, message, packet) => {
+			//   console.log('Received Message: ' + message.toString() + '\nOn topic: ' + topic)
+			// })
+		</script>
+	</body>
+</html>

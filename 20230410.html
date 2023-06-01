@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="color">Click me</button>
+	</body>
+	<script>
+		color.onclick = function() {
+			this.style.backgroundColor = 'red';
+		};
+	</script>
+	<style>
+		#color {
+			transition-property: background-color;
+			transition-duration: 3s;
+		}
+	</style>
+</html>

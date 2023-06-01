@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		welcome to detecting system!
+		<script>
+			Notification.requestPermission(function(status) {
+				// default
+				// granted  仅当值为 "granted" 时显示通知
+				// denied
+				console.log(status);
+				var n = new Notification("报警测试提示", {
+					body: "welcome to detecting system!",
+				}); // 显示通知
+			});
+		</script>
+	</body>
+</html>
