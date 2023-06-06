@@ -10,22 +10,33 @@
 			<option value="2">ddd</option>
 			<option value="3">sssw</option>
 		</select>
-		
+
 	</body>
 	<script>
 		function handleChange() {
-			const sel = document.getElementById("select");
-			const index = sel.selectedIndex;
-			console.log('index----', index);
-			const text = sel.options[index].text; // 选中文本
-			const value = sel.options[index].value; // 选中文本
-			console.log("text---%s, value---%s", text, value);
+			// 这段代码只适用于单选
+			// const sel = document.getElementById("select");
+			// const index = sel.selectedIndex;
+			// console.log('index----', index);
+			// const text = sel.options[index].text; // 选中文本
+			// const value = sel.options[index].value; // 选中文本
+			// console.log("text---%s, value---%s", text, value);
+
+			// 多选
+			const selects = [];
+			const obj = document.getElementById("select");
+			for (var i = 0; i < obj.options.length; i++) {
+				if (obj.options[i].selected) {
+					selects.push(obj.options[i].text); // 收集选中项
+				}
+			}
+			console.log('selects', selects);
 		}
-		
-		
-		const selectElement = document.querySelector('#select');
-		selectElement.addEventListener('change', (event) => {
-		  console.log(event.target.value);
-		});
+
+
+		// const selectElement = document.querySelector('#select');
+		// selectElement.addEventListener('change', (event) => {
+		//   console.log(event.target.value);
+		// });
 	</script>
 </html>
