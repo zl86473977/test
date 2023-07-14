@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<div id="example"></div>
+	</body>
+	<script>
+		
+		function sum(num) {
+			let total = num;
+			
+			function sum1(num1) {
+				total += num1
+				return sum1;
+			}
+			sum1.toString = () => {
+				return total;
+			}
+			return sum1
+		}
+		console.log(sum(1)(2));
+		console.log(sum(5)(-1)(2));
+		console.log(sum(6)(-1)(-2)(-3));
+		console.log(sum(0)(1)(2)(3)(4)(5));
+	</script>
+</html>

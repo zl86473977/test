@@ -7,15 +7,17 @@
 	</head>
 	<body>
 		<div id="app">
-			{{ message }}
+			<div>{{ message }} / {{ message1 }}{{typeof message1}}</div>
 			<button @click="message+=1">click</button>
+			<input v-model.number="message1">
 		</div>
 
 		<script>
 			var app = new Vue({
 				el: '#app',
 				data: {
-					message: 'Hello Vue!'
+					message: 'Hello Vue!',
+					message1: ''
 				}
 			})
 		</script>
