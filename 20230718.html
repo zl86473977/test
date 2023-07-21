@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<!-- 获取鼠标点击移动区域 -->
+	<body>
+		<div style="display: flex;flex-wrap: wrap;">
+			<div class="card" data-index='1'>
+				<img id="avatar" src="./20230714/test.jpg" style="width:80px;height:80px;">
+				<span>1</span>
+			</div>
+			<div class="card" data-index='2'>
+				<img id="avatar" src="./20230714/test.jpg" style="width:80px;height:80px;">
+				<span>2</span>
+			</div>
+			<div class="card" data-index='3'>
+				<img id="avatar" src="./20230714/test.jpg" style="width:80px;height:80px;">
+				<span>3</span>
+			</div>
+			<div class="card" data-index='4'>
+				<img id="avatar" src="./20230714/test.jpg" style="width:80px;height:80px;">
+				<span>4</span>
+			</div>
+			<div class="card" data-index='5'>
+				<img id="avatar" src="./20230714/test.jpg" style="width:80px;height:80px;">
+				<span>5</span>
+			</div>
+			<div class="card" data-index='6'>
+				<img id="avatar" src="./20230714/test.jpg" style="width:80px;height:80px;">
+				<span>6</span>
+			</div>
+			<div class="card" data-index='7'>
+				<img id="avatar" src="./20230714/test.jpg" style="width:80px;height:80px;">
+				<span>7</span>
+			</div>
+			<div class="card" data-index='8'>
+				<img id="avatar" src="./20230714/test.jpg" style="width:80px;height:80px;">
+				<span>8</span>
+			</div>
+			<div class="card" data-index='9'>
+				<img id="avatar" src="./20230714/test.jpg" style="width:80px;height:80px;">
+				<span>9</span>
+			</div>
+			<div class="card" data-index='10'>
+				<img id="avatar" src="./20230714/test.jpg" style="width:80px;height:80px;">
+				<span>10</span>
+			</div>
+			<div class="card" data-index='11'>
+				<img id="avatar" src="./20230714/test.jpg" style="width:80px;height:80px;">
+				<span>11</span>
+			</div>
+			<div class="card" data-index='12'>
+				<img id="avatar" src="./20230714/test.jpg" style="width:80px;height:80px;">
+				<span>12</span>
+			</div>
+			<div class="card" data-index='13'>
+				<img id="avatar" src="./20230714/test.jpg" style="width:80px;height:80px;">
+				<span>13</span>
+			</div>
+			<div class="card" data-index='14'>
+				<img id="avatar" src="./20230714/test.jpg" style="width:80px;height:80px;">
+				<span>14</span>
+			</div>
+		</div>
+
+		<script>
+			document.addEventListener('mouseup', () => {
+				const range = window.getSelection().getRangeAt(0);
+				const selectDom = range.cloneContents();
+				console.log(selectDom);
+				console.log('selectDom', selectDom.children);
+				const arr = Array.from(selectDom.children)
+				arr.forEach(item => {
+					console.log(item.getAttribute('data-index'));
+				})
+			})
+			
+			348 / 47 = 7.4
+			330 / 41 = 8.0
+		</script>
+	</body>
+</html>

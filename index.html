@@ -6,8 +6,14 @@
 	</head>
 	<body>
 		<div>
-			<iframe src="http://www.4399.com"></iframe>
+			<!-- <iframe src="http://www.4399.com"></iframe> -->
+			<img src="20230714/test.jpg" id="test" oncontextmenu="return false;"/>
 		</div>
+		<style>
+			img {
+				/* pointer-events: none; */
+			}
+		</style>
 		<script>
 			// setTimeout(() => {				
 				// Notification.requestPermission( function(status) {
@@ -15,6 +21,10 @@
 				//   var n = new Notification("title", {body: "notification body"}); // 显示通知
 				// });
 			// }, 2000)
+			// var img = document.getElementById("test");  
+			// img.addEventListener("click", function(event) {  
+			//   event.preventDefault();  
+			// });
 		</script>
 	</body>
 </html>
