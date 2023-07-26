@@ -7,7 +7,6 @@
 	<body>
 		<div>
 			<!-- <iframe src="http://www.4399.com"></iframe> -->
-			<img src="20230714/test.jpg" id="test" oncontextmenu="return false;"/>
 		</div>
 		<style>
 			img {
@@ -21,10 +20,15 @@
 				//   var n = new Notification("title", {body: "notification body"}); // 显示通知
 				// });
 			// }, 2000)
-			// var img = document.getElementById("test");  
-			// img.addEventListener("click", function(event) {  
-			//   event.preventDefault();  
-			// });
+			
+			async function testPromise() {
+				return 1
+			}
+			testPromise().then(res => {
+				console.log('then---', res);
+			}).finally(() => {
+				console.log('---finally---');
+			})
 		</script>
 	</body>
 </html>
