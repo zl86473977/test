@@ -10,7 +10,14 @@
 //   };
 // };
 
-var a = 1;
-var b = 2;
-export { a };
-export default b;
+// var a = 1;
+// var b = 2;
+// export { a };
+// export default b;
+
+
+// let timerId = setTimeout(() => alert("never happens"), 1000);
+// console.log(timerId); // 定时器标识符
+
+// clearTimeout(timerId);
+// console.log(timerId);

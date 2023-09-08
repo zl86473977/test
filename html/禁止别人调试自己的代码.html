@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- https://juejin.cn/post/7262175454714626108 -->
+	</head>
+	<body>
+		<div>123</div>
+		<span id="kkk"></span>
+		<script>
+			(() => {
+				function ban() {
+				 setInterval(() => {
+						debugger;
+					}, 50);
+				}
+				try {
+					ban();
+				} catch (err) {}
+			})();
+			document.getElementById('kkk').innerHTML = '456'
+		</script>
+	</body>
+</html>
