@@ -33,23 +33,23 @@ var scheduleCourse = function(courses) {
 
 	let queue = [];
 	let total = 0;
-	
-	for(course of courses) {
-		let ti = course[0], di = course[1];
-		if(total + ti <= di) {
+
+	for (const [ti, di] of courses) {
+		if (total + ti <= di) {
 			total += ti;
 			queue.push(ti);
-			queue.sort();
-		} else if(queue.length > 0 && queue[queue.length - 1] > ti) {
-			total -= queue[queue.length - 1] - ti;
+			queue.sort((a, b) => a - b);
+			console.log('---queue---', queue);
+		} else if (queue.length > 0 && queue[queue.length - 1] > ti) {
+			total = total - queue[queue.length - 1] + ti;
 			queue.pop();
 			queue.push(ti);
-			queue.sort();
+			queue.sort((a, b) => a - b);
 		}
 	}
+	console.log(queue.length);
 	return queue.length
-	
-	
+
 	// error----------------
 	// 遍历十足，如果数组中的元素第一项大于第二项，则去除，因为次课程永远无法完成
 	// courses.sort((c1, c2) => {
