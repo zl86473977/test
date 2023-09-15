@@ -46,7 +46,7 @@ var rotate = function(matrix) {
 			matrix[i][j] = matrix[i][j] - matrix[j][i]
 		}
 	}
-	// console.log('--matrix--', matrix);
+	// 垂直翻转
 	for(let i = 0; i < matrix.length; i++) {
 		for(let j = 0; j < Math.floor(matrix.length / 2); j++) {
 			matrix[i][j] = matrix[i][j] + matrix[i][matrix.length - 1 - j];
@@ -55,7 +55,6 @@ var rotate = function(matrix) {
 		}
 	}
 	console.log('--matrix--', matrix);
-	// 垂直翻转
 };
 
 // rotate([
