@@ -45,7 +45,6 @@ var giveGem = function(gem, operations) {
 		gem[from] -= give;
 		gem[to] += give;
 	})
-	console.log('-----', gem);
 	let max = Math.max(...gem);
 	let min = Math.min(...gem);
 	console.log('-----', max - min);
@@ -54,4 +53,4 @@ var giveGem = function(gem, operations) {
 
 // giveGem([3,1,2], [[0,2],[2,1],[2,0]]) // 2
 // giveGem([100,0,50,100], [[0,2],[0,1],[3,0],[3,0]]) // 75
-giveGem([0,0,0,0], [[1,2],[3,1],[1,2]]) // 0
+// giveGem([0,0,0,0], [[1,2],[3,1],[1,2]]) // 0
