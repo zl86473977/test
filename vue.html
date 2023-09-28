@@ -2,24 +2,55 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title></title>
-		<script src="http://static.chizao.com/js/vue.min.js"></script>
 	</head>
 	<body>
-		<div id="app">
-			<div>{{ message }} / {{ message1 }}{{typeof message1}}</div>
-			<button @click="message+=1">click</button>
-			<input v-model.number="message1">
-		</div>
-
-		<script>
-			var app = new Vue({
-				el: '#app',
-				data: {
-					message: 'Hello Vue!',
-					message1: ''
+		<!-- <div id="app">{{ message }}</div>
+		<script type="module">
+			import {
+				createApp,
+				ref
+			} from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+		
+			createApp({
+				setup() {
+					const message = ref('Hello Vue!')
+					return {
+						message
+					}
 				}
-			})
+			}).mount('#app')
+		</script> -->
+		
+		<script type="importmap">
+			{
+		    "imports": {
+		      "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+		    }
+		  }
+		</script>
+		<div id="app"></div>
+		<!-- <script type="module">
+		  import { createApp } from 'vue'
+		  import MyComponent from './js/my-component.js'
+		
+		  createApp(MyComponent).mount('#app')
+		</script> -->
+		
+		<script type="module">
+			import {
+				createApp,
+				ref
+			} from 'vue'
+		
+			createApp({
+				setup() {
+					const message = ref('Hello Vue!')
+					return {
+						message
+					}
+				},
+				template: `<div>message is {{ message }}</div>`
+			}).mount('#app')
 		</script>
 		<style>
 		</style>
